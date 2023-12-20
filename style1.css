@@ -1,0 +1,65 @@
+.movie {
+	background-color: LightSteelBlue;
+    margin-bottom: 20px;  /* задает отступ снизу для элементов с классом "movie" в размере 20 пикселей.*/
+	display: flex;  /* указывает,что элементы должны использовать flexbox для управления их расположением.*/
+    flex-direction: column;  /* задает направление главной оси flex-контейнера как вертикальное (от верхнего к нижнему). */
+    align-items: center;  /* выравнивает элементы по центру по вертикали и горизонтали внутри flex-контейнера. */
+}
+
+.movie img {
+    width: 200px;
+    height: 300px;
+	margin: 0 auto; /*задает отступы по горизонтали автоматически, что приводит к центрированию изображения внутри его родительского элемента. */
+}
+
+.movie h2, .movie p {
+    text-align: center; /*задает выравнивание текста по центру для выбранных элементов.*/
+}
+
+.menu {
+  background-color: SlateBlue;
+  overflow: hidden;
+}
+
+.menu a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu a:hover, .menu .dropdown:hover .dropbtn {
+  background-color: blue;
+}
+/*это медиа-запрос, который применяет указанные стили только к экранам с максимальной шириной 600 пикселей.*/
+@media screen and (max-width: 600px) { 
+  .menu a:not(:first-child), .menu .dropdown .dropbtn {
+    display: none; /*это свойство, которое скрывает выбранные элементы.*/
+  }
+  
+  .menu a.icon {
+    float: right;
+    display: block;
+  }
+  
+  .menu.responsive {
+    position: relative;
+    background-color: SlateBlue;
+    overflow: auto;
+    height: auto;
+  }
+  
+  .menu.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .menu.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+}
